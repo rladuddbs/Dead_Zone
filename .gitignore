@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+/Engine/x64
+/Output
+/Client/x64
