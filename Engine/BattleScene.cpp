@@ -57,6 +57,7 @@ void BattleScene::LoadScene()
 		shared_ptr<GameObject> skybox = make_shared<GameObject>();
 		skybox->AddComponent(make_shared<Transform>());
 		skybox->SetCheckFrustum(false);
+		skybox->GetTransform()->SetLocalScale(Vec3(100.0f, 100.0f, 100.0f));
 		shared_ptr<MeshRenderer> meshRenderer = make_shared<MeshRenderer>();
 		{
 			shared_ptr<Mesh> sphereMesh = GET_SINGLE(Resources)->LoadSphereMesh();

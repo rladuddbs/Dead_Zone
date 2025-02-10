@@ -42,7 +42,7 @@ struct ShaderInfo
 	RASTERIZER_TYPE rasterizerType = RASTERIZER_TYPE::CULL_BACK;
 	DEPTH_STENCIL_TYPE depthStencilType = DEPTH_STENCIL_TYPE::LESS;
 	BLEND_TYPE blendType = BLEND_TYPE::DEFAULT;
-	D3D12_PRIMITIVE_TOPOLOGY_TYPE topologyType = D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE;
+	D3D_PRIMITIVE_TOPOLOGY topology = D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
 };
 
 class Shader : public Object
@@ -61,6 +61,8 @@ private:
 	void CreateShader(const wstring& path, const string& name, const string& version, ComPtr<ID3DBlob>& blob, D3D12_SHADER_BYTECODE& shaderByteCode);
 	void CreateVertexShader(const wstring& path, const string& name, const string& version);
 	void CreatePixelShader(const wstring& path, const string& name, const string& version);
+
+	D3D12_PRIMITIVE_TOPOLOGY_TYPE GetTopologyType(D3D_PRIMITIVE_TOPOLOGY topology);
 
 private:
 	ShaderInfo _info;
