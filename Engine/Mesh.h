@@ -21,6 +21,8 @@ public:
 	void Render(uint32 instanceCount = 1, uint32 idx = 0);
 	//void Render(shared_ptr<class InstancingBuffer>& buffer, uint32 idx = 0);
 
+	void LoadMeshFromFile(FILE*);
+
 private:
 	void CreateVertexBuffer(const vector<Vertex>& buffer);
 	void CreateIndexBuffer(const vector<uint32>& buffer);

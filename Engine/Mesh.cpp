@@ -30,6 +30,11 @@ void Mesh::Render(uint32 instanceCount, uint32 idx)
 	GRAPHICS_CMD_LIST->DrawIndexedInstanced(_vecIndexInfo[idx].count, instanceCount, 0, 0, 0);
 }
 
+void Mesh::LoadMeshFromFile(FILE*)
+{
+	// TODO : 파일에서 Mesh 데이터를 읽어온다.
+}
+
 //void Mesh::Render(shared_ptr<InstancingBuffer>& buffer, uint32 idx)
 //{
 //	D3D12_VERTEX_BUFFER_VIEW bufferViews[] = { _vertexBufferView, buffer->GetBufferView() };

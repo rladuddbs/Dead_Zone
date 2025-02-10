@@ -31,4 +31,9 @@ void Material::PushGraphicsData()
 	_shader->Update();
 }
 
+void Material::LoadMaterialsFromFile(FILE*)
+{
+	// TODO:: File로 부터 Material 데이터를 읽어온다.
+}
+
 

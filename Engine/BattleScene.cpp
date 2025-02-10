@@ -11,6 +11,7 @@
 #include "TestCameraScript.h"
 #include "Engine.h"
 #include "Resources.h"
+#include "MeshData.h"
 
 void BattleScene::LoadScene()
 {
@@ -157,6 +158,25 @@ void BattleScene::LoadScene()
 	
 		//scene->AddGameObject(light);
 		AddGameObject(light);
+	}
+#pragma endregion
+
+
+#pragma region FBX
+	{
+		//shared_ptr<MeshData> meshData = GET_SINGLE(Resources)->LoadModelFromBinary(L"..\\Resources\\FBX\\Dragon.fbx"); // MeshData* meshData
+
+		//vector<shared_ptr<GameObject>> gameObjects = meshData->Instantiate();
+
+		//for (auto& gameObject : gameObjects)
+		//{
+		//	gameObject->SetName(L"Model");
+		//	gameObject->SetCheckFrustum(false);
+		//	gameObject->GetTransform()->SetLocalPosition(Vec3(0.f, 0.f, 300.f));
+		//	gameObject->GetTransform()->SetLocalScale(Vec3(1.f, 1.f, 1.f));
+		//	gameObject->GetTransform()->SetLocalRotation(Vec3(-90.0f, 0.0f, 0.0f));
+		//	scene->AddGameObject(gameObject);
+		//}
 	}
 #pragma endregion
 	//return scene;

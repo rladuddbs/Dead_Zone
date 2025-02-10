@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Resources.h"
 #include "Engine.h"
+#include "MeshData.h"
 
 void Resources::Init()
 {
@@ -225,6 +226,25 @@ shared_ptr<Mesh> Resources::LoadSphereMesh()
 	Add(L"Sphere", mesh);
 
 	return mesh;
+}
+
+shared_ptr<MeshData> Resources::LoadModelFromBinary(const wstring& path)
+{
+	wstring key = path;
+
+	shared_ptr<MeshData> meshData = Get<MeshData>(key);
+	if (meshData)
+		return meshData;
+
+	// TODO: wstring -> char
+	const string& spath = ws2s(path);
+	const char* Filepath = spath.c_str();
+
+	meshData = MeshData::LoadModelFromBinary(Filepath);
+	meshData->SetName(key);
+	Add(key, meshData);
+
+	return meshData;
 }
 
 shared_ptr<Texture> Resources::CreateTexture(const wstring& name, DXGI_FORMAT format, uint32 width, uint32 height,

@@ -52,6 +52,7 @@ public:
 
 	void PushGraphicsData();
 
+	void LoadMaterialsFromFile(FILE*);
 private:
 	shared_ptr<Shader>	_shader;
 	MaterialParams		_params;

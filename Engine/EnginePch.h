@@ -146,4 +146,11 @@ struct TransformParams
 
 };
 
+// Utils
+wstring s2ws(const string& s);
+string ws2s(const wstring& s);
+int ReadIntegerFromFile(FILE* pInFile);
+float ReadFloatFromFile(FILE* pInFile);
+BYTE ReadStringFromFile(FILE* pInFile, char* pstrToken);
+
 extern unique_ptr<class Engine> GEngine;
