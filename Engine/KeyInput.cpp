@@ -1,14 +1,14 @@
 #include "pch.h"
-#include "Input.h"
+#include "KeyInput.h"
 
 
-void Input::Init(HWND hwnd)
+void KeyInput::Init(HWND hwnd)
 {
 	_hwnd = hwnd;
 	_states.resize(KEY_TYPE_COUNT, KEY_STATE::NONE);
 }
 
-void Input::Update()
+void KeyInput::Update()
 {
 	HWND hwnd = ::GetActiveWindow();
 	if (_hwnd != hwnd)

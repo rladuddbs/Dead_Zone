@@ -17,9 +17,15 @@ enum class KEY_TYPE
 	Z = 'Z',
 	C = 'C',
 
+	CTRL = VK_CONTROL,
+	SPACE = VK_SPACE,
+
+
+	ESC = VK_ESCAPE,
 
 
 	// TEST
+	SHIFT = VK_LSHIFT,
 	RETURN = VK_RETURN,
 	LEFTCLICK = RI_MOUSE_BUTTON_1_DOWN
 };
@@ -39,9 +45,9 @@ enum
 	KEY_STATE_COUNT = static_cast<int32>(KEY_STATE::END),
 };
 
-class Input
+class KeyInput
 {
-	DECLARE_SINGLE(Input);
+	DECLARE_SINGLE(KeyInput);
 
 public:
 	void Init(HWND hwnd);
@@ -60,5 +66,6 @@ private:
 private:
 	HWND _hwnd;
 	vector<KEY_STATE> _states;
+
 };
 
