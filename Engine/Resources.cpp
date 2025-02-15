@@ -301,6 +301,20 @@ void Resources::CreateDefaultShader()
 		Add<Shader>(L"Texture", shader);
 	}
 
+	// UI
+	{
+		ShaderInfo info =
+		{
+			SHADER_TYPE::FORWARD,
+			RASTERIZER_TYPE::CULL_NONE,
+			DEPTH_STENCIL_TYPE::NO_DEPTH_TEST_NO_WRITE,
+		};
+
+		shared_ptr<Shader> shader = make_shared<Shader>();
+		shader->CreateGraphicsShader(L"..\\Resources\\Shader\\forward.fx", info, "VS_UI", "PS_UI");
+		Add<Shader>(L"UI", shader);
+	}
+
 	// DirLight
 	{
 		ShaderInfo info =
@@ -358,6 +372,9 @@ void Resources::CreateDefaultShader()
 		shader->CreateGraphicsShader(L"..\\Resources\\Shader\\shadow.fx", info);
 		Add<Shader>(L"Shadow", shader);
 	}
+
+
+
 }
 
 void Resources::CreateDefaultMaterial()
